@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: unsdg-backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+    expose:
+      - "8010"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_BASE_URL: /api
+    container_name: unsdg-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  hf-cache:
