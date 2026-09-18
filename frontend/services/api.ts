@@ -28,7 +28,7 @@ export const sdgApi = {
     data: SDGClassificationRequest,
   ): Promise<SDGClassificationResponse> => {
     const response = await apiClient.post<SDGClassificationResponse>(
-      "api/classify_aurora",
+      "classify_aurora",
       data,
     );
     return response.data;
@@ -38,7 +38,7 @@ export const sdgApi = {
     data: SDGClassificationRequest,
   ): Promise<SDGClassificationResponse> => {
     const response = await apiClient.post<SDGClassificationResponse>(
-      "api/classify_st_url",
+      "classify_st_url",
       data,
     );
     return response.data;
