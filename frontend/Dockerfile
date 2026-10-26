@@ -5,7 +5,10 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 
-COPY . .
+COPY frontend/ ./
+
+COPY backend/data/sdg_targets/ /backend/data/sdg_targets/
+
 
 ARG NEXT_PUBLIC_API_BASE_URL=/
 ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
