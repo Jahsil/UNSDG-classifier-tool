@@ -8,6 +8,7 @@ RUN npm ci
 COPY frontend/ ./
 
 COPY backend/data/sdg_targets/ /backend/data/sdg_targets/
+COPY sdg_goal_imgs/ /sdg_goal_imgs/
 
 ARG NEXT_PUBLIC_API_BASE_URL=/
 ENV NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
