@@ -38,7 +38,7 @@ export const sdgApi = {
     data: SDGClassificationRequest,
   ): Promise<SDGClassificationResponse> => {
     const response = await apiClient.post<SDGClassificationResponse>(
-      "classify_aurora",
+      "api/classify_aurora",
       data,
     );
     return response.data;
@@ -49,7 +49,7 @@ export const sdgApi = {
     timeoutMs = 30_000,
   ): Promise<SDGClassificationResponse> => {
     const response = await apiClient.post<SDGClassificationResponse>(
-      "classify_st_url",
+      "api/classify_st_url",
       data,
       { timeout: timeoutMs },
     );
